@@ -84,8 +84,8 @@ print("Press CTRL+C to stop the sniffer.")
 print("=" * 60)
 
 try:
-    sniff(prn=process_packet, store=False)
-
+    sniff(prn=process_packet, store=False, timeout=30)
+    show_statistics()
 except KeyboardInterrupt:
     print("\n\nPacket capture stopped by user.")
     show_statistics()
